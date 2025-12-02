@@ -1,0 +1,54 @@
+package Locators;
+
+import java.awt.AWTException;
+
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
+
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+public class ex3_xpathByContains {
+
+	public static void main(String[] args) throws InterruptedException, AWTException {
+
+		WebDriver driver=new ChromeDriver();
+		
+		ChromeOptions options = new ChromeOptions();
+
+        // ✅ Use a temporary user-data directory (fresh Chrome profile)
+        options.addArguments("--user-data-dir=/tmp/chrome-profile");
+        options.addArguments("--disable-save-password-bubble");
+        options.addArguments("--disable-notifications");
+        options.addArguments("--disable-infobars");
+
+        // ✅ Start Chrome
+        WebDriver driver1 = new ChromeDriver(options);
+
+        // Open website
+        driver1.get("https://www.saucedemo.com");
+
+		driver1.get("https://www.saucedemo.com/");
+
+		driver1.manage().window().maximize();
+
+		driver1.findElement(By.xpath("//input[@id='user-name']")).sendKeys("standard_user");  //id
+		driver1.findElement(By.xpath("//input[@id='password']")).sendKeys("secret_sauce");  //pass
+
+		driver1.findElement(By.xpath("//input[@id='login-button']")).click();  //click on login btn
+
+		driver1.findElement(By.xpath("//div[text()='Sauce Labs Backpack']")).click();  //xpath by text.. select one product
+
+		
+		
+		
+		driver1.findElement(By.xpath("//button[contains(text(), 'cart')]")).click();
+		
+		
+		
+
+	}
+}

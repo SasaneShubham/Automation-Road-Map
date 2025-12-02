@@ -1,0 +1,30 @@
+package Locators;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class ex3_xpathByContains {
+
+	public static void main(String[] args) throws InterruptedException {
+
+		WebDriver driver=new ChromeDriver();
+
+		driver.get("https://www.saucedemo.com/");
+
+		driver.manage().window().maximize();
+
+		Thread.sleep(2000);
+
+		driver.findElement(By.xpath("//input[@id='user-name']")).sendKeys("standard_user");  //id
+		driver.findElement(By.xpath("//input[@id='password']")).sendKeys("secret_sauce");  //pass
+
+		driver.findElement(By.xpath("//input[@id='login-button']")).click();  //click on login btn
+
+		driver.findElement(By.xpath("//div[text()='Sauce Labs Backpack']")).click();  //xpath by text.. select one product
+
+		driver.findElement(By.xpath("//button[contains(text(), 'cart')]")).click();
+		//driver.quit();
+
+	}
+}

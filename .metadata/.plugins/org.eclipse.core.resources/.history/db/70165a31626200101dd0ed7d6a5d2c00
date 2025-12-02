@@ -1,0 +1,20 @@
+package Arrays;
+
+public class ex_1_String_Array {
+
+	public static void main(String[] args) {
+		
+	
+	String [] ar=new String[5];
+	
+	
+	ar[0]="Shubham";
+	ar[1]="Aaishwarya";
+	ar[2]="Ketan";
+	ar[3]="Rahul";
+	ar[4]="Chetan";
+	
+	System.out.println(ar[2]);
+	
+	}
+}

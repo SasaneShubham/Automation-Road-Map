@@ -1,0 +1,36 @@
+package Selenium_Webdriver;
+
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class ex6_getTitle {
+
+public static void main(String[] args) throws InterruptedException {
+		
+		
+		WebDriver driver =new ChromeDriver();
+		
+		driver.get("https://www.facebook.com/login.php");
+		
+		driver.manage().window().maximize();
+		
+		
+		String actTitle = driver.getTitle();
+		
+		String expTitle="Log in to Facebook";
+		
+		System.out.println(actTitle);
+		
+		if(actTitle.equals(expTitle)) {
+			
+			System.out.println("Correct Title");
+		}
+		else {
+			System.out.println("Wrong Title");
+		}
+		
+		driver.quit();
+	}
+	
+}

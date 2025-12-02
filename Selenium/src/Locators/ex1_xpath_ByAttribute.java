@@ -1,0 +1,30 @@
+package Locators;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class ex1_xpath_ByAttribute {
+
+	public static void main(String[] args) throws InterruptedException {
+		
+		WebDriver driver =new ChromeDriver();
+		
+		driver.get("http://www.automationpractice.pl/index.php");
+		
+		driver.manage().window().maximize();
+		
+		driver.findElement(By.xpath("//input[@name='search_query']")).sendKeys("T-shirts");//search for T-shirt
+		
+		driver.findElement(By.xpath("//button[@name='submit_search']")).click();   //click on search button
+		
+		Thread.sleep(2000);
+		
+		driver.findElement(By.xpath("//a[@title='Contact us']")).click();   //click on contact us button
+		
+		Thread.sleep(2000);
+		
+		driver.quit();
+		
+	}
+}

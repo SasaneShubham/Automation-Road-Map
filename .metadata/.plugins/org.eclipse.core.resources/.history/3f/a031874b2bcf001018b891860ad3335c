@@ -1,0 +1,49 @@
+kpackage Variables;
+
+public class Types_Of_Variables {
+
+	int a=10;       //non-static global variable
+	static int b=23;
+	
+	
+	public void m1() {
+		
+		System.out.println(a);    //calling non-static global variable
+		System.out.println(b);
+		
+		int c=20;        //non-static local variable
+		
+		System.out.println(c);
+		
+		System.out.println(different_class.b);  //calling static global variable from diff class
+		
+		different_class diff=new different_class();
+		System.out.println(diff.f);             //calling non-static  global variable from  diff class
+	}
+	
+	public static void m2() {
+		
+		System.out.println(b);  //calling static global variable
+		
+		int d=33;
+		
+		System.out.println(d);
+		
+		System.out.println(different_class.b);  //calling static global variable from diff class
+		
+	
+	}
+	
+	public static void main(String[] args) {
+		
+		Types_Of_Variables types=new Types_Of_Variables();
+		types.m1();
+		
+		Types_Of_Variables.m2();
+		
+		System.out.println(b);
+		
+		System.out.println(different_class.b);  //calling static global variable from diff class
+		
+	}
+}

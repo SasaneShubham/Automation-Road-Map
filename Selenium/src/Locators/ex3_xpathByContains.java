@@ -1,0 +1,25 @@
+package Locators;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class ex3_xpathByContains {
+
+	public static void main(String[] args) throws InterruptedException {
+		
+		WebDriver driver=new ChromeDriver();
+
+		driver.get("https://www.facebook.com/login.php");
+
+		driver.manage().window().maximize();
+
+		Thread.sleep(2000);
+		 
+		//xpath by contains
+		driver.findElement(By.xpath("//a[contains(text(),'Forgotten ')]")).click();
+		
+		driver.quit();
+		
+	}
+}

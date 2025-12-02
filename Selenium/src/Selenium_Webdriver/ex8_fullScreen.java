@@ -1,0 +1,24 @@
+package Selenium_Webdriver;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class ex8_fullScreen {
+
+public static void main(String[] args) throws InterruptedException {
+		
+		WebDriver driver=new ChromeDriver();
+		
+		driver.get("https://www.youtube.com/watch?v=jCVjudmnByk");
+		
+		Thread.sleep(2000);
+		
+		driver.manage().window().fullscreen();
+		
+		Thread.sleep(2000);
+		
+		//driver.quit();
+		
+		
+	}
+}
